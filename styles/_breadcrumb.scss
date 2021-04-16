@@ -1,0 +1,17 @@
+.breadcrumb {
+    display: flex;
+    margin: $trailing-margin 0;
+    padding-left: $main-padding;
+    font-size: 1.4rem;
+    color: $medium-gray;
+    .breadcrumb-item:not(:last-child) {
+        &::after {
+            content: '>';
+            margin: 0 10px;
+        }
+    }
+    .breadcrumb-item:last-child {
+        color: $dark-gray;
+        font-weight: $font-bold;
+    }
+}

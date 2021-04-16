@@ -1,0 +1,188 @@
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-light.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-regular.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+:root {
+  font-family: "Proxima Nova", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  background-color: #EEE;
+}
+
+.header {
+  width: 100vw;
+  height: 50px;
+  padding: 0 8vw;
+  background-color: #FFE600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .logo {
+  margin-right: 20px;
+}
+.header .search-container {
+  width: 90%;
+  height: 35px;
+  display: flex;
+}
+.header .search-container .search-container__input {
+  width: 95%;
+  padding-left: 12px;
+  font-size: 1.8rem;
+}
+.header .search-container .search-container__button {
+  width: 35px;
+  height: 35px;
+  float: right;
+  background: url(../assets/ic_Search.png) no-repeat center #EEE;
+}
+
+.breadcrumb {
+  display: flex;
+  margin: 16px 0;
+  padding-left: 8vw;
+  font-size: 1.4rem;
+  color: #666;
+}
+.breadcrumb .breadcrumb-item:not(:last-child)::after {
+  content: ">";
+  margin: 0 10px;
+}
+.breadcrumb .breadcrumb-item:last-child {
+  color: #333;
+  font-weight: 700;
+}
+
+.product-category {
+  margin: 0 8vw;
+  display: flex;
+  background-color: white;
+  position: relative;
+}
+.product-category:last-child {
+  margin-bottom: 52px;
+}
+.product-category::after {
+  content: "";
+  width: calc(100% - 30px);
+  position: absolute;
+  bottom: 0;
+  border-bottom: 2px solid #EEE;
+  margin: 0 15px;
+}
+.product-category .product-category__image {
+  width: 180px;
+  height: 180px;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  margin: 16px;
+  flex-shrink: 0;
+}
+.product-category .product-category__info__container {
+  margin: 32px 0 32px;
+  flex-grow: 1;
+}
+.product-category .product-category__info__container .product-category__price {
+  font-size: 2.4rem;
+  display: inline-block;
+  margin: 0 10px 32px 0;
+}
+.product-category .product-category__info__container .product-category__country {
+  width: 150px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 36px;
+  color: #999;
+  float: right;
+}
+.product-category .product-category__info__container .product-category__description {
+  font-size: 1.8rem;
+  color: #333;
+  max-width: 385px;
+}
+
+.product-detail {
+  display: flex;
+  margin: 0 8vw;
+  padding: 32px;
+  background-color: #FFFFFF;
+  justify-content: space-between;
+}
+.product-detail .product-detail__image {
+  display: block;
+  width: 680px;
+  height: 680px;
+  background-color: #FFFFFF;
+  flex: 0 1 auto;
+}
+.product-detail .product-detail__container {
+  flex: 1 1 auto;
+  max-width: 375px;
+}
+.product-detail .product-detail__container .product-detail__condition {
+  font-size: 1.4rem;
+  padding: 32px 0 16px;
+  color: #333;
+}
+.product-detail .product-detail__container .product-detail__title {
+  font-size: 2.4rem;
+  width: 250px;
+  letter-spacing: 1.5px;
+}
+.product-detail .product-detail__container .product-detail__price {
+  font-size: 4.6rem;
+  padding: 32px 16px 32px 0;
+  display: inline-block;
+}
+.product-detail .product-detail__container .product-detail__button {
+  display: block;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background-color: #3483FA;
+  color: #FFFFFF;
+  font-size: 1.8rem;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+.product-description {
+  margin: 0 8vw 52px 8vw;
+  padding: 0 32px;
+  font-weight: 400;
+  background-color: #FFFFFF;
+}
+.product-description .product-description__title {
+  font-size: 2.8rem;
+}
+.product-description .product-description__excerpt {
+  width: 600px;
+  padding: 32px 0;
+  font-size: 1.6rem;
+  color: #999;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -45,3 +45,24 @@
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .product-category .product-category__info__container .product-category__country {
+        float: none;
+    }
+}
+@media screen and (max-width: 425px) {
+    .product-category {
+        flex-direction: column;
+        .product-category__image{
+            align-self: center;
+        }
+        .product-category__info__container {
+            margin: 0 $trailing-margin $layout-padding;
+            .product-category__country {
+                float: right;
+                width: auto;
+            }
+        }
+    }
+}

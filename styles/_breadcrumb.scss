@@ -1,5 +1,6 @@
 .breadcrumb {
     display: flex;
+    flex-wrap: wrap;
     margin: $trailing-margin 0;
     padding-left: $main-padding;
     font-size: 1.4rem;

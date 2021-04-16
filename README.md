@@ -21,3 +21,9 @@ al mismo tiempo que se realizaba cada una de las maquetaciones anteriormente men
 a medida que se trabajaba en esto se importaban los archivos scss a un archivo scss principal (styles) el cual se iba compilando a medida que se trabajaba en los estilos para poder ver los cambios en live server.
 
 Al finalizar esto se realizo el primer commit en nuestro repositorio en github
+
+
+
+
+#BONUS!
+1-)Se realizaron diseños responsive, aunque el mock up haya sido la versión desktop se penso en posibles vistas en caso de que un usuario accediera desde tablet o desktop.

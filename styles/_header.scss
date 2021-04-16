@@ -13,6 +13,7 @@
         width: 90%;
         height: 35px;
         display: flex;
+        flex-grow: 1;
         .search-container__input {
             width: 95%;
             padding-left: 12px;

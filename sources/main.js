@@ -1,13 +1,20 @@
-import Result from './result.js';
-import { createResult } from './createComponents.js';
+import Result from './Result.js';
+import ItemDetail from './ItemDetail.js'
+import { createResult, createDetail, createDetailDescription } from './createComponents.js';
 
 
-const apiUrl = 'https://api.mercadolibre.com/sites/MLA/search?',
+const apiUrl = 'https://api.mercadolibre.com/',
     url = document.URL;
 let resultsArray = [];
 
 const getSearchParam = (url) => url.split('?')[1];
 const queryParam = getSearchParam(url);
+
+const searchChecker = (queryParam) => {
+    if (queryParam.contains('q=')) {
+        return true;
+    }
+}
 
 console.log(getSearchParam(url));
 
@@ -22,8 +29,8 @@ const resultReturned = (itemArray) => {
 
     return result;
 }
-
-fetch(`${apiUrl}${queryParam}`)
+if(queryParam.includes('q=')){
+    fetch(`${apiUrl}sites/MLA/search?${queryParam}`)
     .then(response => response.json())
     .then(response => {
         console.log(response);
@@ -38,7 +45,25 @@ fetch(`${apiUrl}${queryParam}`)
 
         const finalResult = resultReturned(resultsArray);
 
+        console.log(JSON.stringify(resultReturned(finalResult)));
+    });
+} else if (queryParam.includes('items=')) {
+    const param = queryParam.split('=')[1];
+    console.log(param);
+    fetch(`${apiUrl}items/${param}`)
+    .then(response => response.json())
+    .then(response => {
+        console.log(response);
+        const resultItem = new ItemDetail(response);
+
+        createDetail(resultItem);
+        createDetailDescription(apiUrl, resultItem.id);
+
+        const finalResult = resultReturned(resultsArray);
+
         console.log(JSON.stringify(resultReturned(resultsArray)));
     });
+}
+
 
 

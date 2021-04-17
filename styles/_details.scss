@@ -14,22 +14,22 @@
     &__container {
         flex: 1 1 auto;
         max-width: 375px;
-        .product-detail__condition {
+        &--condition {
             font-size: 1.4rem;
             padding: $layout-padding 0 $trailing-margin;
             color: $dark-gray;
         }
-        .product-detail__title {
+        &--title {
             font-size: 2.4rem;
             width: 250px;
             letter-spacing: 1.5px;
         }
-        .product-detail__price {
+        &--price {
             font-size: 4.6rem;
             padding: $layout-padding $trailing-margin $layout-padding 0;
             display: inline-block;
         }
-        .product-detail__button {
+        &--button {
             display: block;
             width: 100%;
             height: 40px;

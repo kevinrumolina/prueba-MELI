@@ -7,6 +7,18 @@ const createBreadcrumb = result => {
     breadcrumbContainer.appendChild(breadcrumbItem);
 };
 
+const fetchBreadcrumbs = (url) => {
+    fetch(url)
+        .then(response => response.json())
+        .then(response => {
+            const breadCrumbArray = response.path_from_root;
+
+            breadCrumbArray.forEach(category => {
+                createBreadcrumb(category);
+            })
+        });
+}
+
 /*Schema para items en la pagina de resultados*/
 const resultBaseHTML = '<img class="product-category__image"><div class="product-category__info--container"><p class="product-category__price"></p><img class="product-category__shipping" src="./assets/ic_shipping.png" alt="Shipping logo" width="18"><p class="product-category__state"></p><h2 class="product-category__description"></h2></div>'
 
@@ -74,4 +86,4 @@ const createDetailDescription = (apiUrl, id) => {
 }
 
 
-export { createBreadcrumb, createResult, createDetail, createDetailDescription };
+export { createBreadcrumb, fetchBreadcrumbs, createResult, createDetail, createDetailDescription };

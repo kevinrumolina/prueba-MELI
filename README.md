@@ -25,5 +25,5 @@ Al finalizar esto se realizo el primer commit en nuestro repositorio en github
 
 
 
-#BONUS!
+# BONUS!
 1-)Se realizaron diseños responsive, aunque el mock up haya sido la versión desktop se penso en posibles vistas en caso de que un usuario accediera desde tablet o desktop.

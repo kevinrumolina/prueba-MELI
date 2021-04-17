@@ -9,12 +9,12 @@
 <body>
     <header class="header">
         <img class="logo" src="./assets/Logo_ML.png" alt="MELI Logo" width="50">
-        <form class="search-container" action="GET">
-            <input class="search-container__input" type="text" name="search" placeholder="Nunca dejes de buscar">
+        <form class="search-container" method="GET" action="./results.html">
+            <input class="search-container__input" type="text" name="q" placeholder="Nunca dejes de buscar">
             <button class="search-container__button" type="submit"></button>
         </form>
     </header>
-    <main>
+    <main class="main-container">
         <nav class="breadcrumb">
             <p class="breadcrumb-item">Electrónica, Audio y Video</p>
             <p class="breadcrumb-item">iPod</p>
@@ -24,7 +24,7 @@
         </nav>
         <article class="product-category">
             <img class="product-category__image" src="#" alt="Product Image">
-            <div class="product-category__info__container">
+            <div class="product-category__info--container">
                 <p class="product-category__price">$ 1.980</p>
                 <img class="product-category__shipping" src="./assets/ic_shipping.png" alt="Shipping logo" width="18">
                 <p class="product-category__country">Capital Federal</p>
@@ -33,7 +33,7 @@
         </article>
         <article class="product-category">
             <img class="product-category__image" src="#" alt="Product Image">
-            <div class="product-category__info__container">
+            <div class="product-category__info--container">
                 <p class="product-category__price">$ 1.980</p>
                 <img class="product-category__shipping" src="./assets/ic_shipping.png" alt="Shipping logo" width="18">
                 <p class="product-category__country">Capital Federal</p>
@@ -42,7 +42,7 @@
         </article>
         <article class="product-category">
             <img class="product-category__image" src="#" alt="Product Image">
-            <div class="product-category__info__container">
+            <div class="product-category__info--container">
                 <p class="product-category__price">$ 1.980</p>
                 <img class="product-category__shipping" src="./assets/ic_shipping.png" alt="Shipping logo" width="18">
                 <p class="product-category__country">Capital Federal</p>

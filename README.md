@@ -26,6 +26,12 @@ Al finalizar esto se realizo el primer commit en nuestro repositorio en github
 
 En esta sección se crearon archivos JavaScript correspondientes para la creacion de los componentes (resultados). Se creo una clase reutilizable para extraer la info requerida de los items de la API para luego crear un componente HTML para cada uno de los 4 resultados solicitados en la consigna reemplazando los valores de la src de la imagen de producto y el innerText de los elementos HTML que son individuales de cada resultado, tomando toda esta data de los resultados. Adicionalmente se agrego el key-value de state a cada uno de los objetos del array de items ya que este dato es utilizado en el componente de resultado.
 
+# Actualizar Scripts para la extraccion de la info de la API para Detalles y Breadcrumbs
+Luego del paso anterior, junto a unos pequeños cambios de refactorizar un poco el código se procedio a hacer la extraccion de los elementos de la API de manera similar que en el paso anterior, junto a esto aparecieron problemas no vistos antes con los estilos los cuales fueron corregidos. se refactorizo el código JS para que quedara organizado de la siguiente manera:  
+1-) ItemDetail.js y Result.js --> archivos encargados en exportar las clases que se usan para tener un objeto con la información requerida extraida de la API  
+2-) createComponents.js --> archivo con las funciones principales con la logica para el maquetado de los breadcrumbs, resultados y detalles.  
+3-) main.js --> Encargado de aplicar la logica final para la extraccion de contenido usando las funciones y clases mencionadas en los dos archivos anteriores.
+
 
 # BONUS!
 1-)Se realizaron diseños responsive, aunque el mock up haya sido la versión desktop se penso en posibles vistas en caso de que un usuario accediera desde tablet o desktop.

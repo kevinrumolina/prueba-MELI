@@ -3,7 +3,7 @@ const resultBaseHTML = '<img class="product-category__image"><div class="product
 
 const createResult = (result) => {
     const mainContainer = document.querySelector('.main-container')
-    const productContainer = Object.assign(document.createElement('article'), {className: `product-category ${result.id}`});
+    const productContainer = Object.assign(document.createElement('article'), {className: 'product-category', id: result.id});
 
     productContainer.innerHTML = resultBaseHTML;
 

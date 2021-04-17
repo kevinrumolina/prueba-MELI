@@ -22,7 +22,9 @@ a medida que se trabajaba en esto se importaban los archivos scss a un archivo s
 
 Al finalizar esto se realizo el primer commit en nuestro repositorio en github
 
+# Elaboracion de script para la Extracción de la info de la API para Resultados
 
+En esta sección se crearon archivos JavaScript correspondientes para la creacion de los componentes (resultados). Se creo una clase reutilizable para extraer la info requerida de los items de la API para luego crear un componente HTML para cada uno de los 4 resultados solicitados en la consigna reemplazando los valores de la src de la imagen de producto y el innerText de los elementos HTML que son individuales de cada resultado, tomando toda esta data de los resultados. Adicionalmente se agrego el key-value de state a cada uno de los objetos del array de items ya que este dato es utilizado en el componente de resultado.
 
 
 # BONUS!

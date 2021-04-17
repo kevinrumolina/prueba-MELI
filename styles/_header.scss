@@ -14,12 +14,12 @@
         height: 35px;
         display: flex;
         flex-grow: 1;
-        .search-container__input {
+        &__input {
             width: 95%;
             padding-left: 12px;
             font-size: 1.8rem;
         }
-        .search-container__button {
+        &__button {
             width: 35px;
             height: 35px;
             float: right;

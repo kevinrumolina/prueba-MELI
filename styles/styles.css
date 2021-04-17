@@ -48,12 +48,12 @@
   display: flex;
   flex-grow: 1;
 }
-.header .search-container .search-container__input {
+.header .search-container__input {
   width: 95%;
   padding-left: 12px;
   font-size: 1.8rem;
 }
-.header .search-container .search-container__button {
+.header .search-container__button {
   width: 35px;
   height: 35px;
   float: right;
@@ -68,11 +68,11 @@
   font-size: 1.4rem;
   color: #666;
 }
-.breadcrumb .breadcrumb-item:not(:last-child)::after {
+.breadcrumb-item:not(:last-child)::after {
   content: ">";
   margin: 0 10px;
 }
-.breadcrumb .breadcrumb-item:last-child {
+.breadcrumb-item:last-child {
   color: #333;
   font-weight: 700;
 }
@@ -152,33 +152,33 @@
   background-color: #FFFFFF;
   justify-content: space-between;
 }
-.product-detail .product-detail__image {
+.product-detail__image {
   display: block;
   width: 680px;
   height: 680px;
   background-color: #FFFFFF;
   flex: 0 1 auto;
 }
-.product-detail .product-detail__container {
+.product-detail__container {
   flex: 1 1 auto;
   max-width: 375px;
 }
-.product-detail .product-detail__container .product-detail__condition {
+.product-detail__container .product-detail__condition {
   font-size: 1.4rem;
   padding: 32px 0 16px;
   color: #333;
 }
-.product-detail .product-detail__container .product-detail__title {
+.product-detail__container .product-detail__title {
   font-size: 2.4rem;
   width: 250px;
   letter-spacing: 1.5px;
 }
-.product-detail .product-detail__container .product-detail__price {
+.product-detail__container .product-detail__price {
   font-size: 4.6rem;
   padding: 32px 16px 32px 0;
   display: inline-block;
 }
-.product-detail .product-detail__container .product-detail__button {
+.product-detail__container .product-detail__button {
   display: block;
   width: 100%;
   height: 40px;
@@ -196,10 +196,10 @@
   padding: 0 32px;
   background-color: #FFFFFF;
 }
-.product-description .product-description__title {
+.product-description__title {
   font-size: 2.8rem;
 }
-.product-description .product-description__excerpt {
+.product-description__excerpt {
   max-width: 600px;
   padding: 32px 0;
   font-size: 1.6rem;
@@ -210,7 +210,7 @@
   .product-detail {
     flex-direction: column;
   }
-  .product-detail .product-detail__image {
+  .product-detail__image {
     width: 100%;
   }
 }

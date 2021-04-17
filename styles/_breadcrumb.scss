@@ -5,13 +5,13 @@
     padding-left: $main-padding;
     font-size: 1.4rem;
     color: $medium-gray;
-    .breadcrumb-item:not(:last-child) {
+    &-item:not(:last-child) {
         &::after {
             content: '>';
             margin: 0 10px;
         }
     }
-    .breadcrumb-item:last-child {
+    &-item:last-child {
         color: $dark-gray;
         font-weight: $font-bold;
     }

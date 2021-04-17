@@ -4,14 +4,14 @@
     padding: $layout-padding;
     background-color: $white;
     justify-content: space-between;
-    .product-detail__image {
+    &__image {
         display: block;
         width: 680px;
         height: 680px;
         background-color: $white;
         flex: 0 1 auto;
     }
-    .product-detail__container {
+    &__container {
         flex: 1 1 auto;
         max-width: 375px;
         .product-detail__condition {
@@ -47,10 +47,10 @@
     margin: 0 $main-padding 52px $main-padding;
     padding: 0 $layout-padding;
     background-color: $white;
-    .product-description__title {
+    &__title {
         font-size: 2.8rem;
     }
-    .product-description__excerpt {
+    &__excerpt {
         max-width: 600px;
         padding: $layout-padding 0;
         font-size: 1.6rem;
@@ -61,7 +61,7 @@
 @media screen and (max-width: 768px) {
     .product-detail {
         flex-direction: column;
-        .product-detail__image {
+        &__image {
             width: 100%;
         }
     }

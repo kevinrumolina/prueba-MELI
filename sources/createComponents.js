@@ -1,3 +1,12 @@
+/*Schema para breadcrumbs*/
+const createBreadcrumb = result => {
+    const breadcrumbContainer = document.querySelector('.breadcrumb'),
+        breadcrumbItem = Object.assign(document.createElement('p'), {className: 'breadcrumb-item'});
+    
+    breadcrumbItem.innerText = result.name;
+    breadcrumbContainer.appendChild(breadcrumbItem);
+};
+
 /*Schema para items en la pagina de resultados*/
 const resultBaseHTML = '<img class="product-category__image"><div class="product-category__info--container"><p class="product-category__price"></p><img class="product-category__shipping" src="./assets/ic_shipping.png" alt="Shipping logo" width="18"><p class="product-category__state"></p><h2 class="product-category__description"></h2></div>'
 
@@ -65,4 +74,4 @@ const createDetailDescription = (apiUrl, id) => {
 }
 
 
-export { createResult, createDetail, createDetailDescription };
+export { createBreadcrumb, createResult, createDetail, createDetailDescription };

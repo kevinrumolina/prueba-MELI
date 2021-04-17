@@ -1,6 +1,6 @@
 import Result from './Result.js';
 import ItemDetail from './ItemDetail.js'
-import { createResult, createDetail, createDetailDescription } from './createComponents.js';
+import { createBreadcrumb, createResult, createDetail, createDetailDescription } from './createComponents.js';
 
 
 const apiUrl = 'https://api.mercadolibre.com/',
@@ -54,14 +54,24 @@ if(queryParam.includes('q=')){
     .then(response => response.json())
     .then(response => {
         console.log(response);
+
+        fetch(`https://api.mercadolibre.com/categories/${response.category_id}/`)
+        .then(response => response.json())
+        .then(response => {
+            const breadCrumbArray = response.path_from_root;
+
+            breadCrumbArray.forEach(category => {
+                createBreadcrumb(category);
+            })
+            console.log(response);
+        })
+
         const resultItem = new ItemDetail(response);
 
         createDetail(resultItem);
         createDetailDescription(apiUrl, resultItem.id);
 
-        const finalResult = resultReturned(resultsArray);
-
-        console.log(JSON.stringify(resultReturned(resultsArray)));
+        console.log(JSON.stringify(resultReturned(resultItem)));
     });
 }
 

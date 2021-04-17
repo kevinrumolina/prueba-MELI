@@ -26,6 +26,43 @@ const createResult = (result) => {
 }
 
 /*Schema de producto para la pagina de detalles*/
+const detailBaseHTML = '<article class="product-detail"><img class="product-detail__image"><div class="product-detail__container"><p class="product-detail__container--condition"></p><h2 class="product-detail__container--title"></h2><p class="product-detail__container--price"></p><img class="product-detail__container--shipping" src="./assets/ic_shipping.png" alt="Shipping logo" width="36"><div class="product-detail__container--button">Comprar</div></div></article><article class="product-description"><h2 class="product-description__title">Descripción del producto</h2><p class="product-description__excerpt"></p></article>';
+
+const createDetail = (result) => {
+    const mainContainer = document.querySelector('.main-container')
+    const productContainer = Object.assign(document.createElement('article'), {id: result.id});
+
+    productContainer.innerHTML = detailBaseHTML;
+
+    const productImage = productContainer.querySelector('.product-detail__image');
+    const productCondition = productContainer.querySelector('.product-detail__container--condition');
+    const productTitle = productContainer.querySelector('.product-detail__container--title')
+    const productPrice = productContainer.querySelector('.product-detail__container--price');
+    const productShipping = productContainer.querySelector('.product-detail__container--shipping');
+
+    Object.assign(productImage, {src: result.picture, alt: result.title});
+    productCondition.innerText= `${result.condition} - ${result.sold_quantity} vendidos`;
+    productTitle.innerText = result.title;
+    productPrice.innerText = '$ ' + result.price.amount;
+
+    if (result.free_shipping === false) {
+        productShipping.parentElement.removeChild(productShipping);
+    }
+
+    mainContainer.appendChild(productContainer);
+}
+
+const createDetailDescription = (apiUrl, id) => {
+    fetch(`${apiUrl}items/${id}/description`)
+    .then(response => response.json())
+    .then(response => {
+        console.log(response);
+        const productDescription = document.querySelector('.product-description__excerpt');
+        const itemDescription = response.plain_text;
+
+        productDescription.innerText = itemDescription
+    });
+}
 
 
-export { createResult };
+export { createResult, createDetail, createDetailDescription };

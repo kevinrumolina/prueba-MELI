@@ -155,7 +155,6 @@
 .product-detail__image {
   display: block;
   width: 680px;
-  height: 680px;
   background-color: #FFFFFF;
   flex: 0 1 auto;
 }
@@ -200,7 +199,7 @@
   font-size: 2.8rem;
 }
 .product-description__excerpt {
-  max-width: 600px;
+  width: 70%;
   padding: 32px 0;
   font-size: 1.6rem;
   color: #999;
@@ -211,6 +210,13 @@
     flex-direction: column;
   }
   .product-detail__image {
+    width: 100%;
+  }
+  .product-detail__container--title {
+    width: auto;
+  }
+
+  .product-description .product-description__excerpt {
     width: 100%;
   }
 }

@@ -7,7 +7,6 @@
     &__image {
         display: block;
         width: 680px;
-        height: 680px;
         background-color: $white;
         flex: 0 1 auto;
     }
@@ -51,7 +50,7 @@
         font-size: 2.8rem;
     }
     &__excerpt {
-        max-width: 600px;
+        width: 70%;
         padding: $layout-padding 0;
         font-size: 1.6rem;
         color: $light-gray;
@@ -64,5 +63,11 @@
         &__image {
             width: 100%;
         }
+        &__container--title {
+            width: auto;
+        }
+    }
+    .product-description .product-description__excerpt {
+        width: 100%;
     }
 }

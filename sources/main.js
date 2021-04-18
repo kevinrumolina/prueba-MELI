@@ -11,8 +11,8 @@ const getSearchParam = (url) => url.split('?')[1];
 const queryParam = getSearchParam(url);
 
 const loadDom = () => {
-    if(queryParam.includes('q=')){
-        fetch(`${apiUrl}/sites/MLA/search?${queryParam}`)
+    if(queryParam.includes('search=')){
+        fetch(`${apiUrl}/sites/MLA/search?${queryParam.replace('search', 'q')}`)
         .then(response => response.json())
         .then(response => {
             fetchBreadcrumbs(`${apiUrl}/categories/${response.results[0].category_id}/`);

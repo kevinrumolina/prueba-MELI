@@ -3,6 +3,8 @@
     display: flex;
     background-color: white;
     position: relative;
+    text-decoration: none;
+    color: $dark-gray;
     &:last-child {
         margin-bottom: 52px;
     }
@@ -42,6 +44,7 @@
             font-size: 1.8rem;
             color: $dark-gray;
             max-width: 385px;
+            margin-right: $trailing-margin;
         }
     }
 }

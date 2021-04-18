@@ -1,3 +1,18 @@
+const setThousands = array => {
+    for(let i=array.length-3; i>0; i--){
+        array[i] = `.${array[i]}`;
+        i-=2;
+    }
+}
+
+const fixPrice = price => {
+    const priceArray = price.toString().split('');
+
+    setThousands(priceArray);
+
+    return priceArray.toString().replaceAll(',', '');
+}
+
 /*Schema para breadcrumbs*/
 const createBreadcrumb = result => {
     const breadcrumbContainer = document.querySelector('.breadcrumb'),
@@ -24,7 +39,7 @@ const resultBaseHTML = '<img class="product-category__image"><div class="product
 
 const createResult = (result) => {
     const mainContainer = document.querySelector('.main-container')
-    const productContainer = Object.assign(document.createElement('article'), {className: 'product-category', id: result.id});
+    const productContainer = Object.assign(document.createElement('a'), {className: 'product-category', id: result.id, href: `./details.html?items=${result.id}`});
 
     productContainer.innerHTML = resultBaseHTML;
 
@@ -35,7 +50,7 @@ const createResult = (result) => {
     const productShipping = productContainer.querySelector('.product-category__shipping');
 
     Object.assign(productImage, {src: result.picture, alt: result.title});
-    productPrice.innerText = '$ ' + result.price.amount;
+    productPrice.innerText = '$ ' + fixPrice(result.price.amount);
     productState.innerText = result.state;
     productDescription.innerText = result.title;
 
@@ -64,7 +79,7 @@ const createDetail = (result) => {
     Object.assign(productImage, {src: result.picture, alt: result.title});
     productCondition.innerText= `${result.condition} - ${result.sold_quantity} vendidos`;
     productTitle.innerText = result.title;
-    productPrice.innerText = '$ ' + result.price.amount;
+    productPrice.innerText = '$ ' + fixPrice(result.price.amount);
 
     if (result.free_shipping === false) {
         productShipping.parentElement.removeChild(productShipping);

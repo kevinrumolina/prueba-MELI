@@ -4,15 +4,18 @@
     padding: $layout-padding;
     background-color: $white;
     justify-content: space-between;
+    flex-wrap: wrap;
     &__image {
         display: block;
         width: 680px;
         background-color: $white;
         flex: 0 1 auto;
+        margin: 0 auto;
     }
     &__container {
         flex: 1 1 auto;
         max-width: 375px;
+        padding-left: $trailing-margin;
         &--condition {
             font-size: 1.4rem;
             padding: $layout-padding 0 $trailing-margin;

@@ -82,6 +82,8 @@
   display: flex;
   background-color: white;
   position: relative;
+  text-decoration: none;
+  color: #333;
 }
 .product-category:last-child {
   margin-bottom: 52px;
@@ -123,6 +125,7 @@
   font-size: 1.8rem;
   color: #333;
   max-width: 385px;
+  margin-right: 16px;
 }
 
 @media screen and (max-width: 768px) {
@@ -151,16 +154,19 @@
   padding: 32px;
   background-color: #FFFFFF;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .product-detail__image {
   display: block;
   width: 680px;
   background-color: #FFFFFF;
   flex: 0 1 auto;
+  margin: 0 auto;
 }
 .product-detail__container {
   flex: 1 1 auto;
   max-width: 375px;
+  padding-left: 16px;
 }
 .product-detail__container--condition {
   font-size: 1.4rem;

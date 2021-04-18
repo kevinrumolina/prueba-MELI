@@ -74,10 +74,9 @@ const createDetail = (result) => {
 }
 
 const createDetailDescription = (apiUrl, id) => {
-    fetch(`${apiUrl}items/${id}/description`)
+    fetch(`${apiUrl}/items/${id}/description`)
     .then(response => response.json())
     .then(response => {
-        console.log(response);
         const productDescription = document.querySelector('.product-description__excerpt');
         const itemDescription = response.plain_text;
 

@@ -35,7 +35,7 @@ const fetchBreadcrumbs = (url) => {
 }
 
 /*Schema para items en la pagina de resultados*/
-const resultBaseHTML = '<img class="product-category__image"><div class="product-category__info--container"><p class="product-category__price"></p><img class="product-category__shipping" src="./assets/ic_shipping.png" alt="Shipping logo" width="18"><p class="product-category__state"></p><h2 class="product-category__description"></h2></div>'
+const resultBaseHTML = '<img class="product-category__image"><div class="product-category__info--container"><p class="product-category__price"></p><img class="product-category__shipping" src="../assets/ic_shipping.png" alt="Shipping logo" width="18"><p class="product-category__state"></p><h2 class="product-category__description"></h2></div>'
 
 const createResult = (result) => {
     const mainContainer = document.querySelector('.main-container')
@@ -62,7 +62,7 @@ const createResult = (result) => {
 }
 
 /*Schema de producto para la pagina de detalles*/
-const detailBaseHTML = '<article class="product-detail"><img class="product-detail__image"><div class="product-detail__container"><p class="product-detail__container--condition"></p><h2 class="product-detail__container--title"></h2><p class="product-detail__container--price"></p><img class="product-detail__container--shipping" src="./assets/ic_shipping.png" alt="Shipping logo" width="36"><div class="product-detail__container--button">Comprar</div></div></article><article class="product-description"><h2 class="product-description__title">Descripción del producto</h2><p class="product-description__excerpt"></p></article>';
+const detailBaseHTML = '<article class="product-detail"><img class="product-detail__image"><div class="product-detail__container"><p class="product-detail__container--condition"></p><h2 class="product-detail__container--title"></h2><p class="product-detail__container--price"></p><img class="product-detail__container--shipping" src="../assets/ic_shipping.png" alt="Shipping logo" width="36"><div class="product-detail__container--button">Comprar</div></div></article><article class="product-description"><h2 class="product-description__title">Descripción del producto</h2><p class="product-description__excerpt"></p></article>';
 
 const createDetail = (result) => {
     const mainContainer = document.querySelector('.main-container')

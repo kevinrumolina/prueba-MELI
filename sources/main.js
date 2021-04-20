@@ -1,45 +1,36 @@
-import Result from './Result.js';
-import ItemDetail from './ItemDetail.js'
-import { fetchBreadcrumbs, createResult, createDetail, createDetailDescription } from './createComponents.js';
+import { fetchBreadcrumbs, createBreadcrumb, createResult, createDetail } from './createComponents.js';
 
-
-const apiUrl = 'https://api.mercadolibre.com',
+const apiUrl = 'http://localhost:3000',
     url = document.URL;
-let resultsArray = [];
 
 const getSearchParam = (url) => url.split('?')[1];
 const queryParam = getSearchParam(url);
 
 const loadDom = () => {
     if(queryParam.includes('search=')){
-        fetch(`${apiUrl}/sites/MLA/search?${queryParam.replace('search', 'q')}`)
+        fetch(`${apiUrl}/api/items?${queryParam}`, {'Sec-Fetch-Mode': 'no-cors'})
         .then(response => response.json())
         .then(response => {
-            fetchBreadcrumbs(`${apiUrl}/categories/${response.results[0].category_id}/`);
+            response.categories.forEach(category => {
+                createBreadcrumb(category);
+            });
     
-            for (let i=0; i<=3; i++) {
-                const resultItem = new Result(response.results[i]);
-                resultsArray.push(resultItem);
-            }
-    
-            resultsArray.forEach(result => {
-                createResult(result)
+            response.items.forEach(result => {
+                createResult(result);
             });
     
             return document.querySelectorAll('.product-category');
         });
     } else if (queryParam.includes('items=')) {
-        const param = queryParam.split('=')[1];
-        console.log(param);
-        fetch(`${apiUrl}/items/${param}`)
+        const param = queryParam.split('items=')[1];
+
+        fetch(`${apiUrl}/api/items/${param}`)
         .then(response => response.json())
         .then(response => {
-            fetchBreadcrumbs(`${apiUrl}/categories/${response.category_id}`);
-    
-            const resultItem = new ItemDetail(response);
-    
-            createDetail(resultItem);
-            createDetailDescription(apiUrl, resultItem.id);
+            console.log(param)
+            fetchBreadcrumbs(`https://api.mercadolibre.com/categories/${response.item.category}`);
+
+            createDetail(response.item);
         });
     }
 };

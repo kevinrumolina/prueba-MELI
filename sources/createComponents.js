@@ -14,22 +14,22 @@ const fixPrice = price => {
 }
 
 /*Schema para breadcrumbs*/
-const createBreadcrumb = result => {
+const createBreadcrumb = category => {
     const breadcrumbContainer = document.querySelector('.breadcrumb'),
         breadcrumbItem = Object.assign(document.createElement('p'), {className: 'breadcrumb-item'});
     
-    breadcrumbItem.innerText = result.name;
+    breadcrumbItem.innerText = category;
     breadcrumbContainer.appendChild(breadcrumbItem);
 };
 
-const fetchBreadcrumbs = (url) => {
+const fetchBreadcrumbs = url => {
     fetch(url)
         .then(response => response.json())
         .then(response => {
             const breadCrumbArray = response.path_from_root;
 
             breadCrumbArray.forEach(category => {
-                createBreadcrumb(category);
+                createBreadcrumb(category.name);
             })
         });
 }
@@ -37,7 +37,7 @@ const fetchBreadcrumbs = (url) => {
 /*Schema para items en la pagina de resultados*/
 const resultBaseHTML = '<img class="product-category__image"><div class="product-category__info--container"><p class="product-category__price"></p><img class="product-category__shipping" src="../assets/ic_shipping.png" alt="Shipping logo" width="18"><p class="product-category__state"></p><h2 class="product-category__description"></h2></div>'
 
-const createResult = (result) => {
+const createResult = result => {
     const mainContainer = document.querySelector('.main-container')
     const productContainer = Object.assign(document.createElement('a'), {className: 'product-category', id: result.id, href: `./details.html?items=${result.id}`});
 
@@ -64,7 +64,7 @@ const createResult = (result) => {
 /*Schema de producto para la pagina de detalles*/
 const detailBaseHTML = '<article class="product-detail"><img class="product-detail__image"><div class="product-detail__container"><p class="product-detail__container--condition"></p><h2 class="product-detail__container--title"></h2><p class="product-detail__container--price"></p><img class="product-detail__container--shipping" src="../assets/ic_shipping.png" alt="Shipping logo" width="36"><div class="product-detail__container--button">Comprar</div></div></article><article class="product-description"><h2 class="product-description__title">Descripción del producto</h2><p class="product-description__excerpt"></p></article>';
 
-const createDetail = (result) => {
+const createDetail = result => {
     const mainContainer = document.querySelector('.main-container')
     const productContainer = Object.assign(document.createElement('article'), {id: result.id});
 
@@ -75,11 +75,13 @@ const createDetail = (result) => {
     const productTitle = productContainer.querySelector('.product-detail__container--title')
     const productPrice = productContainer.querySelector('.product-detail__container--price');
     const productShipping = productContainer.querySelector('.product-detail__container--shipping');
+    const productDescription = productContainer.querySelector('.product-description__excerpt');
 
     Object.assign(productImage, {src: result.picture, alt: result.title});
     productCondition.innerText= `${result.condition} - ${result.sold_quantity} vendidos`;
     productTitle.innerText = result.title;
     productPrice.innerText = '$ ' + fixPrice(result.price.amount);
+    productDescription.innerText = result.description;
 
     if (result.free_shipping === false) {
         productShipping.parentElement.removeChild(productShipping);
@@ -88,16 +90,4 @@ const createDetail = (result) => {
     mainContainer.appendChild(productContainer);
 }
 
-const createDetailDescription = (apiUrl, id) => {
-    fetch(`${apiUrl}/items/${id}/description`)
-    .then(response => response.json())
-    .then(response => {
-        const productDescription = document.querySelector('.product-description__excerpt');
-        const itemDescription = response.plain_text;
-
-        productDescription.innerText = itemDescription
-    });
-}
-
-
-export { createBreadcrumb, fetchBreadcrumbs, createResult, createDetail, createDetailDescription };
+export { createBreadcrumb, fetchBreadcrumbs, createResult, createDetail };

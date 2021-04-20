@@ -32,6 +32,13 @@ Luego del paso anterior, junto a unos pequeños cambios de refactorizar un poco 
 2-) createComponents.js --> archivo con las funciones principales con la logica para el maquetado de los breadcrumbs, resultados y detalles.  
 3-) main.js --> Encargado de aplicar la logica final para la extraccion de contenido usando las funciones y clases mencionadas en los dos archivos anteriores.
 
+# Construir Los Endpoints para ser utilizados desde las vista con node.js y express
+
+Esta fue una de las partes que mas costo diseñar, ya que hace mucho tiempo no generaba este tipo de configuraciones que van un poco del lado del back que del front, la abarque mirando algunos videos en youtube y viendo cursos en plataformas para tomar las bases donde logre encontrar parte de las bases para realizar estos endpoints, todo iba bn pero aun con todo lo que habia visto y estudiado solo hablaban de la comunicación entre cliente y mi API, aún faltaba el problema a solucionar la comunicación entre mi API y la API de mercado libre, fue lo que mas me costo encontrar hasta que finalmente encontre una solución (axios), La cual realiza una función similar (o igual) por lo que entendi al fetch asi que procedi a leer de que trataba y implementarla!, con esto ya pude crear los schemas que se solicitaban en el test, dentro de esto cabe destacar:  
+- al schema solicitado para resultados agregue al formato indicado a cada objeto dentro de items otro key/value adicional (state), ya que este se mostraba dentro de los objetos que eran solicitados dentro del mock up de la prueba.
+- al schema solicitado para resultados agregue al formato indicado a cada objeto dentro de item otro key value adicional (category), ya que este se requeria en detalles para extraer los breadcrumbs que eran solicitados dentro del mock up de la prueba
+al tratar de hacer fetch a las rutas tuve problemas por CORS los cuales nunca habia tratado, investigando un poco, nuevamente, encontre la solución.
+Finalmente procedi a refactorizar la extraccion que tenia ya que con esto ya no iba a solicitar la información a la API de mercadolibre directamente sino que a la mia y esta se encarga de filtrar la data obtenida de la API de mercadolibre, con esto removi algunos archivos en los cuales tenia unas clases las cuales habia implementado, ya que estaba creando los objetos de información directamente de unas funciones que servian de fabricas.
 
 # BONUS!
 1-)Se realizaron diseños responsive, aunque el mock up haya sido la versión desktop se penso en posibles vistas en caso de que un usuario accediera desde tablet o desktop.

@@ -11,6 +11,8 @@ const loadDom = () => {
         fetch(`${apiUrl}/api/items?${queryParam}`, {'Sec-Fetch-Mode': 'no-cors'})
         .then(response => response.json())
         .then(response => {
+            console.log(response);
+
             response.categories.forEach(category => {
                 createBreadcrumb(category);
             });
@@ -27,7 +29,7 @@ const loadDom = () => {
         fetch(`${apiUrl}/api/items/${param}`)
         .then(response => response.json())
         .then(response => {
-            console.log(param)
+            console.log(response);
             fetchBreadcrumbs(`https://api.mercadolibre.com/categories/${response.item.category}`);
 
             createDetail(response.item);

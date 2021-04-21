@@ -77,6 +77,7 @@ app.get('/api/items', (req, res) => {
                     categoryArray.push(response.data.path_from_root[i].name);
                 }
                 
+                console.log(categoryArray, itemsArray);
                 res.status(200).send(resultObject(categoryArray, itemsArray));
             })
         })
@@ -94,6 +95,7 @@ app.get('/api/items/:id', (req, res) => {
             axios.get(`${apiUrl}/items/${req.params.id}`),
             axios.get(`${apiUrl}/items/${req.params.id}/description`)
         ]).then(axios.spread((response1, response2) => {
+            console.log(detailObject(response1.data, response2.data));
             res.status(200).send(detailObject(response1.data, response2.data));
         })).catch(error => {
             console.log(error);

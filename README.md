@@ -1,5 +1,15 @@
 # prueba-MELI
 Test Práctico - Frontend
+
+# para acceder al proyecto puedes:
+1-) abrir nuestra terminal
+2-) clonar este repositorio localmente: 'git clone git@github.com:kevinrumolina/prueba-MELI.git'  
+3-) navegar al directorio que clonamos y correr 'npm install' en el directorio principal de nuestro proyecto (prueba-MELI)  
+4-) desde el directorio mencionado en el paso anterior navegar a la carpeta server con 'cd server'.  
+5-) correr el comando 'node index.js' en la terminal dentro de la carpeta (server) en la cual accedimos en el paso anterior.  
+6-) finalmente puedes abrir por medio de liveServer el archivo index.html que se encuentra en la carpeta principal (prueba-MELI) o ingresar al sitio en linea https://prueba-meli-kevin-ruiz.netlify.app/.  
+7-) podras disfrutar de este proyecto en el cual podremos realizar busquedas que traeran los productos desde la API de mercadolibre pasando por nuestro servidor creado con node.js y finalmente colocando los productos en pantalla, ademas de esto podras darle click a los productos para ingresar al detalle de cada uno de ellos!!, espero que lo disfruten!.  
+
 En este test práctico para MELI se dividio las tareas para hacer en subtareas las cuales se comentaran y explicaran a continuación:
 
 # Diseño Básico de las vistas con HTML y CSS:
@@ -38,7 +48,8 @@ Esta fue una de las partes que mas costo diseñar, ya que hace mucho tiempo no g
 - al schema solicitado para resultados agregue al formato indicado a cada objeto dentro de items otro key/value adicional (state), ya que este se mostraba dentro de los objetos que eran solicitados dentro del mock up de la prueba.
 - al schema solicitado para resultados agregue al formato indicado a cada objeto dentro de item otro key value adicional (category), ya que este se requeria en detalles para extraer los breadcrumbs que eran solicitados dentro del mock up de la prueba
 al tratar de hacer fetch a las rutas tuve problemas por CORS los cuales nunca habia tratado, investigando un poco, nuevamente, encontre la solución.
-Finalmente procedi a refactorizar la extraccion que tenia ya que con esto ya no iba a solicitar la información a la API de mercadolibre directamente sino que a la mia y esta se encarga de filtrar la data obtenida de la API de mercadolibre, con esto removi algunos archivos en los cuales tenia unas clases las cuales habia implementado, ya que estaba creando los objetos de información directamente de unas funciones que servian de fabricas.
+Finalmente procedi a refactorizar la extraccion que tenia ya que con esto ya no iba a solicitar la información a la API de mercadolibre directamente sino que a la mia y esta se encarga de filtrar la data obtenida de la API de mercadolibre, con esto removi algunos archivos en los cuales tenia unas clases las cuales habia implementado, ya que estaba creando los objetos de información directamente de unas funciones que servian de fabricas.  
+si miras en consola o en terminal encontraras la información filtrada de la API de mercadolibre solicitada dentro de las consignas del test.
 
 # BONUS!
-1-)Se realizaron diseños responsive, aunque el mock up haya sido la versión desktop se penso en posibles vistas en caso de que un usuario accediera desde tablet o desktop.
+Se realizaron diseños responsive, aunque el mock up haya sido la versión desktop se penso en posibles vistas en caso de que un usuario accediera desde tablet o desktop.
